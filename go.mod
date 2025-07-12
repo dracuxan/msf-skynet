@@ -2,7 +2,10 @@ module github.com/dracuxan/msf-rpc-client
 
 go 1.24.1
 
-require github.com/vmihailenco/msgpack v3.3.3+incompatible
+require (
+	github.com/joho/godotenv v1.5.1
+	github.com/vmihailenco/msgpack v3.3.3+incompatible
+)
 
 require (
 	github.com/golang/protobuf v1.5.2 // indirect
