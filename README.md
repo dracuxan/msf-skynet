@@ -8,13 +8,13 @@
 
 ## Progress
 
-[X] Establish a connetion to Metasploit
-[X] Retreive list of current sessions
+- [x] Establish a connetion to Metasploit
+- [x] Retreive list of current sessions
 
 ## Next Features
 
-[ ] Stop a session
-[ ] Run an exploit
+- [ ] Stop a session
+- [ ] Run an exploit
 
 ## Directory Structure
 
