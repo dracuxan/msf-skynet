@@ -4,7 +4,7 @@ deps:
 	@go mod tidy
 
 run: build
-	@./bin/cli
+	@./bin/msf-rpc
 
 build:
 	@go build -o bin/cli
