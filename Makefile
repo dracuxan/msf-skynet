@@ -7,7 +7,7 @@ run: build
 	@./bin/msf-rpc
 
 build:
-	@go build -o bin/cli
+	@go build -o bin/msf-rpc
 
 clean:
 	@rm -rf bin

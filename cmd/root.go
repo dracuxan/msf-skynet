@@ -13,7 +13,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "msf-rpc-client",
 	Short: "A MSFConsole RPC client.",
-	Long:  "Same shit just longer",
+	Long:  "Same thing just longer",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
