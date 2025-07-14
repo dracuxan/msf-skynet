@@ -22,15 +22,15 @@
 To install the Metasploit RPC Client directly using Go, run the following command:
 
 ```sh
-go install github.com/dracuxan/msf-rpc-client@latest
+go install github.com/dracuxan/msf-skynet@latest
 ```
 
 This will download and install the binary to your $GOPATH/bin directory.
-Ensure that $GOPATH/bin is in your system's PATH to run the msf-rpc-client command from anywhere.
+Ensure that $GOPATH/bin is in your system's PATH to run the msf-skynet command from anywhere.
 To run the client after installation:
 
 ```sh
-msf-rpc-client
+msf-skynet
 ```
 
 Option 2: Set Up Locally
@@ -39,7 +39,7 @@ To set up and run the project locally, follow these steps:
 Clone the repository:
 
 ```sh
-git clone https://github.com/dracuxan/msf-rpc-client.git && cd msf-rpc-client
+git clone https://github.com/dracuxan/msf-skynet.git && cd msf-skynet
 ```
 
 Install dependencies:Ensure you have Go installed, then run:
@@ -51,13 +51,13 @@ go mod tidy
 Build and run:Build the project using:
 
 ```sh
-go build -o msf-rpc-client
+go build -o msf-skynet
 ```
 
 Then run the binary:
 
 ```sh
-./msf-rpc-client
+./msf-skynet
 ```
 
 Alternatively, use the provided Makefile (if available) to build and run:
@@ -70,7 +70,7 @@ make run
 Directory Structure
 
 ```sh
-msf-rpc-client
+msf-skynet
 ├── msf
 │ ├── auth.go
 │ ├── helper.go

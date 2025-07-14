@@ -4,10 +4,10 @@ deps:
 	@go mod tidy
 
 run: build
-	@./bin/msf-rpc
+	@./bin/msf-skynet
 
 build:
-	@go build -o bin/msf-rpc
+	@go build -o bin/msf-skynet
 
 clean:
 	@rm -rf bin

@@ -9,7 +9,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dracuxan/msf-rpc-client/msf"
+	"github.com/dracuxan/msf-skynet/msf"
 	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
