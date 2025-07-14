@@ -21,8 +21,7 @@ var sessionListCmd = &cobra.Command{
 	Long: `This sessionList command will make a RPC call to MSFConsole to get all the ongoing 
 	sessions and display none if there are no ongoing session`,
 	Run: func(cmd *cobra.Command, args []string) {
-		path := fmt.Sprintf(".env")
-		if err := godotenv.Load(path); err != nil {
+		if err := godotenv.Load(msf.Path); err != nil {
 			log.Fatalf("Unable to load env file: %v", err)
 		}
 

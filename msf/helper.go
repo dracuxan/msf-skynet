@@ -4,8 +4,14 @@ import (
 	"bytes"
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/vmihailenco/msgpack"
+)
+
+var (
+	user = os.Getenv("USER")
+	Path = fmt.Sprintf("/home/%s/.msf-skynet.conf", user)
 )
 
 func (msf *Metasploit) send(req any, res any) error {

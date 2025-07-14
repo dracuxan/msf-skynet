@@ -15,6 +15,19 @@
 - [ ] Stop a session
 - [ ] Run an exploit
 
+## Configuration
+
+To run this tool, you need to create a `.msf-skynet.conf` file in your home directory
+(`~/.msf-skynet.conf`).
+This configuration file should contain the necessary settings to connect to the Metasploit
+RPC server, such as the host, port, username, and password.
+Below is an example configuration:
+
+```sh
+MSFHOST="localhost:55552"
+MSFPASS="secret"
+```
+
 ## Installation and Running
 
 ### Option 1: Install via Go
