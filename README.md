@@ -80,7 +80,15 @@ make build
 make run
 ```
 
-Directory Structure
+## Available Commands:
+
+1. List Sessions
+
+```sh
+msf-skynet sessionList
+```
+
+## Directory Structure
 
 ```sh
 msf-skynet
@@ -90,13 +98,18 @@ msf-skynet
 │ ├── models.go
 │ └── sessions.go
 │
+├── handlers
+│   └── getSessions.go
+│
 ├── cmd
 │ ├── root.go
 │ └── sessionList.go
 │
 ├── main.go
+│
 ├── go.mod
 ├── go.sum
+│
 ├── Makefile
 ├── LICENSE
 └── README.md
