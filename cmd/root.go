@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "msf-rpc-client",
+	Use:   "msf-skynet",
 	Short: "A MSFConsole RPC client.",
 	Long:  "A MSFConsole RPC client to execute commands remotely.",
 	// Uncomment the following line if your bare application
