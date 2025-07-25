@@ -3,9 +3,10 @@ module github.com/dracuxan/msf-skynet
 go 1.24.1
 
 require (
-	github.com/joho/godotenv v1.5.1
+	github.com/gorilla/mux v1.8.1
 	github.com/spf13/cobra v1.9.1
 	github.com/vmihailenco/msgpack v3.3.3+incompatible
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (

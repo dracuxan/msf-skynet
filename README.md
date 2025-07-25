@@ -9,6 +9,7 @@
 
 - [x] Establish a connection to Metasploit
 - [x] Retrieve list of current sessions
+- [x] Implement reverse proxy for routing to Metasploit listeners
 
 ## Next Features
 
@@ -17,15 +18,16 @@
 
 ## Configuration
 
-To run this tool, you need to create a `.msf-skynet.conf` file in your home directory
-(`~/.msf-skynet.conf`).
+To run this tool, you need to create a `.msf-skynet.yml` file in your home directory
+(`~/.msf-skynet.yml`).
 This configuration file should contain the necessary settings to connect to the Metasploit
 RPC server, such as the host, port, username, and password.
 Below is an example configuration:
 
 ```sh
-MSFHOST="localhost:55552"
-MSFPASS="secret"
+msfhost: "localhost:55552"
+msfpass: "secret"
+msfuser: "msf"
 ```
 
 ## Installation and Running
@@ -88,6 +90,26 @@ make run
 msf-skynet sessionList
 ```
 
+2. Run Multiplexer
+
+```sh
+msf-skynet multiplexer [--port <port>] [--mapping <hostname=url>]
+```
+
+Starts a reverse proxy server that routes HTTP requests to Metasploit listeners based on the Host header.
+
+Flags:
+
+- `--port <int>`: Port for the reverse proxy to listen on (default: 80). Requires privileged access for ports below 1024.
+
+- `--mapping <string>`: Hostname to URL mappings (e.g., attacker1.com=http://10.0.1.20:10080). Can be specified multiple times for multiple mappings.
+
+Example:
+
+```sh
+msf-skynet multiplexer --port 8080 --mapping attacker1.com=http://10.0.1.20:10080 --mapping attacker2.com=http://10.0.1.20:20080
+```
+
 ## Directory Structure
 
 ```sh
@@ -96,6 +118,7 @@ msf-skynet
 │ ├── auth.go
 │ ├── helper.go
 │ ├── models.go
+│ ├── multiplexer.go
 │ └── sessions.go
 │
 ├── handlers
@@ -103,6 +126,7 @@ msf-skynet
 │
 ├── cmd
 │ ├── root.go
+│ ├── multiplexer.go
 │ └── sessionList.go
 │
 ├── main.go

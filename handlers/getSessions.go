@@ -7,23 +7,13 @@ import (
 	"os"
 
 	"github.com/dracuxan/msf-skynet/msf"
-	"github.com/joho/godotenv"
 )
 
 func GetSessions() {
-	if err := godotenv.Load(msf.Path); err != nil {
-		log.Fatalf("Unable to load config file: %v", err)
-	}
+	cfg := msf.Config{}
+	cfg.New()
 
-	host := os.Getenv("MSFHOST")
-	pass := os.Getenv("MSFPASS")
-	user := "msf"
-
-	if host == "" || pass == "" {
-		log.Fatalln("Missing env variables MSFHOST or MSFPASS")
-	}
-
-	msf, err := msf.New(host, user, pass)
+	msf, err := msf.New(cfg.MsfHost, cfg.MsfUser, cfg.MsfPass)
 	if err != nil {
 		log.Panicln(err)
 	}
