@@ -43,6 +43,6 @@ var multiplexerCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(multiplexerCmd)
-	multiplexerCmd.Flags().Int("port", 80, "Port for the reverse proxy to listen on")
+	multiplexerCmd.Flags().Int("port", 8080, "Port for the reverse proxy to listen on")
 	multiplexerCmd.Flags().StringSlice("mapping", []string{}, "Hostname to URL mappings (e.g., attacker1.com=http://10.0.1.20:10080)")
 }
