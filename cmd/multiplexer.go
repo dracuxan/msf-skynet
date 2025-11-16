@@ -1,6 +1,3 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
@@ -11,7 +8,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// multiplexerCmd represents the multiplexer command
 var multiplexerCmd = &cobra.Command{
 	Use: "multiplexer",
 

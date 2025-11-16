@@ -1,5 +1,6 @@
 package msf
 
+// login req stuff
 type loginReq struct {
 	_msgpack struct{} `msgpack:",asArray"`
 	Method   string
@@ -7,6 +8,7 @@ type loginReq struct {
 	Password string
 }
 
+// login res stuff
 type loginRes struct {
 	Result       string `msgpack:"result"`
 	Token        string `msgpack:"token"`
@@ -15,6 +17,7 @@ type loginRes struct {
 	ErrorMessage string `msgpack:"error_message"`
 }
 
+// logout req stuff
 type logoutReq struct {
 	_msgpack struct{} `msgpack:",asArray"`
 
@@ -23,32 +26,40 @@ type logoutReq struct {
 	LogoutToken string
 }
 
+// logout res stuff
+// NOTE: currently unused
 type logoutRes struct {
 	Result string `msgpack:"result"`
 }
 
+// session req stuff
 type sessionListReq struct {
 	_msgpack struct{} `msgpack:",asArray"`
 	Method   string
 	Token    string
 }
 
-type SessionListRes struct {
-	ID          uint32 `msgpack:",omitempty"`
-	Type        string `msgpack:"type"`
-	TunnelLocal string `msgpack:"tunnel_local"`
-	TunnelPeer  string `msgpack:"tunnel_peer"`
-	ViaExploit  string `msgpack:"via_exploit"`
-	ViaPayload  string `msgpack:"via_payload"`
-	Description string `msgpack:"desc"`
-	Info        string `msgpack:"info"`
-	Workspace   string `msgpack:"workspace"`
-	SessionHost string `msgpack:"session_host"`
-	SessionPort int    `msgpack:"session_port"`
-	Username    string `msgpack:"username"`
-	UUID        string `msgpack:"uuid"`
-	ExploitUUID string `msgpack:"exploit_uuid"`
-}
+// session res stuff
+type (
+	SessionListRes map[uint32]sessionInfo
+
+	sessionInfo struct {
+		ID          uint32 `msgpack:",omitempty"`
+		Type        string `msgpack:"type"`
+		TunnelLocal string `msgpack:"tunnel_local"`
+		TunnelPeer  string `msgpack:"tunnel_peer"`
+		ViaExploit  string `msgpack:"via_exploit"`
+		ViaPayload  string `msgpack:"via_payload"`
+		Description string `msgpack:"desc"`
+		Info        string `msgpack:"info"`
+		Workspace   string `msgpack:"workspace"`
+		SessionHost string `msgpack:"session_host"`
+		SessionPort int    `msgpack:"session_port"`
+		Username    string `msgpack:"username"`
+		UUID        string `msgpack:"uuid"`
+		ExploitUUID string `msgpack:"exploit_uuid"`
+	}
+)
 
 type Metasploit struct {
 	host  string

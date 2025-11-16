@@ -1,6 +1,3 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
@@ -8,7 +5,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// sessionListCmd represents the sessionList command
 var sessionListCmd = &cobra.Command{
 	Use:   "sessionList",
 	Short: "This command will list all ongoing sessions if any",

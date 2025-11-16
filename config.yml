@@ -1,3 +1,3 @@
-msfhost: "localhost:55552"
+msfhost: "127.0.0.1:55552"
 msfpass: "secret"
 msfuser: "msf"

@@ -1,7 +1,6 @@
 package msf
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -14,10 +13,7 @@ type Config struct {
 	MsfUser string `yaml:"msfuser"`
 }
 
-var (
-	user = os.Getenv("USER")
-	path = fmt.Sprintf("/home/%s/.msf-skynet.yml", user)
-)
+var path = "./config.yml"
 
 func (c *Config) New() {
 	f, err := os.Open(path)
