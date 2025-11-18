@@ -10,10 +10,10 @@
 - [x] Establish a connection to Metasploit
 - [x] Retrieve list of current sessions
 - [x] Implement reverse proxy for routing to Metasploit listeners
+- [x] Stop a session
 
 ## Next Features
 
-- [ ] Stop a session
 - [ ] Run an exploit
 
 ## Configuration
