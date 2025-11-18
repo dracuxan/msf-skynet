@@ -1,5 +1,7 @@
 package msf
 
+import "bytes"
+
 // login req stuff
 type loginReq struct {
 	_msgpack struct{} `msgpack:",asArray"`
@@ -61,11 +63,30 @@ type (
 	}
 )
 
+// session stop req
+type sessionStopReq struct {
+	_msgpack  struct{} `msgpack:",asArray"`
+	Method    string
+	Token     string
+	SessionID string
+}
+
+type sessionStopRes struct {
+	Result string `msgpack:"result"`
+}
+
+type ErrorRes struct {
+	Error        bool   `msgpack:"error,omitempty"`
+	ErrorClass   string `msgpack:"error_class,omitempty"`
+	ErrorMessage string `msgpack:"error_message,omitempty"`
+}
+
 type Metasploit struct {
 	host  string
 	user  string
 	pass  string
 	token string
+	buf   *bytes.Buffer
 }
 
 func New(host, user, pass string) (*Metasploit, error) {
@@ -73,6 +94,7 @@ func New(host, user, pass string) (*Metasploit, error) {
 		host: host,
 		user: user,
 		pass: pass,
+		buf:  new(bytes.Buffer),
 	}
 
 	if err := msf.Login(); err != nil {

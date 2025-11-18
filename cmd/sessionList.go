@@ -6,7 +6,7 @@ import (
 )
 
 var sessionListCmd = &cobra.Command{
-	Use:   "sessionList",
+	Use:   "list",
 	Short: "This command will list all ongoing sessions if any",
 	Long: `This sessionList command will make a RPC call to MSFConsole to get all the ongoing 
 	sessions and display none if there are no ongoing session`,
@@ -16,5 +16,5 @@ var sessionListCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(sessionListCmd)
+	sessCmd.AddCommand(sessionListCmd)
 }
